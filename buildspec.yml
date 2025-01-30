@@ -10,7 +10,7 @@ phases:
       - docker push $REPOSITORY_URI:latest
   post_build:
     commands:
-      - aws lambda update-function-code --function-name api --image-uri $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$REPOSITORY_URI:latest
+      - aws lambda update-function-code --function-name my_lambda --image-uri $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$REPOSITORY_URI:latest
 artifacts:
   files:
     - "**/*"
